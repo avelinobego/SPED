@@ -1,0 +1,13 @@
+go 1.19
+
+use (
+	./comum
+	./constantes
+	./esocial
+	./logger
+	./pessoa
+	./regras
+	./estrategias
+	./validar
+	./data
+)
