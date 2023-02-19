@@ -1,11 +1,10 @@
 package s1000
 
 import (
-	"begoinformatica/sped/esocial/root"
+	"begoinformatica/sped/esocial/comum"
 )
 
-func Make() (esocial *root.ESocial) {
-	esocial = &root.ESocial{}
-
+func Make[T any]() (esocial *comum.ESocial[T]) {
+	esocial = &comum.ESocial[T]{}
 	return
 }

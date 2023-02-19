@@ -1,10 +1,10 @@
 package s1000_test
 
 import (
-	"begoinformatica/sped/comum"
 	"begoinformatica/sped/constantes"
-	"begoinformatica/sped/esocial/root"
+	"begoinformatica/sped/esocial/comum"
 	"begoinformatica/sped/esocial/s1000"
+	"begoinformatica/sped/util"
 	"encoding/xml"
 	"fmt"
 	"testing"
@@ -19,21 +19,20 @@ func Check[T any](value T, err error) T {
 }
 
 func TestMain(t *testing.T) {
-	id := root.MakeId(constantes.CNPJ, 4126001000138)
-
+	id := util.MakeId(constantes.CNPJ, 4126001000138)
 	now := time.Now()
 
 	info := s1000.EvtInfoEmpregador{Id: id.Generate(now)}
-	ev := s1000.IdeEvento{}
+	ev := comum.IdeEvento{}
 	ip := s1000.IdePeriodo{}
-	di := s1000.DadosIsencao{DtEmisCertif: comum.Data(now)}
+	di := s1000.DadosIsencao{DtEmisCertif: comum.NewData(now)}
 	ic := s1000.InfoCadastro{DadosIsencao: di, IndCoop: 200}
 
 	info.IdeEvento = ev
 	info.IdePeriodo = ip
 	info.InfoCadastro = ic
 
-	r := root.ESocial{}
+	r := comum.ESocial[s1000.EvtInfoEmpregador]{}
 	r.Data = info
 
 	if o, e := xml.MarshalIndent(r, "\t", "\t"); e == nil {
