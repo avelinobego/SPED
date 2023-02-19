@@ -56,6 +56,7 @@ type TipoInscricao uint
 
 const (
 	InscrCNPJ  TipoInscricao = iota + 1
+	InscrCPF                 = 2
 	InscrCAEPF               = 3
 	InscrCNO                 = 4
 )
