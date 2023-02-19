@@ -1,7 +1,7 @@
 package validar
 
 import (
-	"begoinformatica/sped/comum"
+	"begoinformatica/sped/util"
 	"fmt"
 	"strings"
 )
@@ -49,7 +49,7 @@ func ValidarCNPJ(v string) (result bool) {
 
 	result = false
 
-	numero := comum.ApenasDigitos(v)
+	numero := util.ApenasDigitos(v)
 	if len(numero) < 14 {
 		return
 	}

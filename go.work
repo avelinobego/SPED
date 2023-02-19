@@ -1,7 +1,7 @@
 go 1.19
 
 use (
-	./comum
+	./util
 	./constantes
 	./esocial
 	./logger
