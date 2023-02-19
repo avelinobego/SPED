@@ -17,12 +17,6 @@ type EvtInfoEmpregador struct {
 	Exclusao           IdePeriodo         `xml:"exclusao>idePeriodo,omitempty"`
 }
 
-type IdeEmpregador struct {
-	XMLName xml.Name                 `xml:"ideEmpregador"`
-	TpInsc  constantes.TipoInscricao `xml:"tpInsc"`
-	NrInsc  string                   `xml:"nrInsc"`
-}
-
 type IdePeriodo struct {
 	IniValid string `xml:"iniValid"`
 	FimValid string `xml:"fimValid,omitempty"`
