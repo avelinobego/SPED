@@ -1,9 +1,9 @@
 package constantes
 
-type TIPO int64
+type Tipo int64
 
 const (
-	CPF TIPO = iota + 1
+	CPF Tipo = iota + 1
 	CNPJ
 )
 
@@ -50,4 +50,40 @@ const (
 	SimplificadoPJ                       = 4
 	IntegracaoJC                         = 9
 	Domestico                            = 22
+)
+
+type TipoInscricao uint
+
+const (
+	InscrCNPJ  TipoInscricao = iota + 1
+	InscrCAEPF               = 3
+	InscrCNO                 = 4
+)
+
+// 0 - Não é cooperativa
+// 1 - Cooperativa de trabalho
+// 2 - Cooperativa de produção
+// 3 - Outras cooperativas
+
+type TipoCooperativa uint
+
+const (
+	CoopNao      TipoCooperativa = iota
+	CoopTrabalho                 = 1
+	CoopProducao                 = 2
+	CoopOutras                   = 3
+)
+
+type TipoConstrutora uint
+
+const (
+	NaoConstrutora TipoConstrutora = iota
+	Construtora                    = 1
+)
+
+type TIndDesFolha uint
+
+const (
+	NaoAplicavel      TIndDesFolha = iota
+	EmpresaEnquadrada              = 1
 )
